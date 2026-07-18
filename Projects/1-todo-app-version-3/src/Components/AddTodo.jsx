@@ -1,48 +1,55 @@
-import { useState } from "react";
+import { useState ,useRef } from "react";
+import { AiFillFileAdd } from "react-icons/ai";
 
 function AddTodo({ onNewItem }) {
-  const [todoName, setTodoName] = useState();
-  const [dueDate, setDueDate] = useState();
+  
+  const todoNameElement = useRef();
+  const dueDateElement = useRef();
+  
 
-  const handleNameChange = (event) => {
-    setTodoName(event.target.value);
-  };
-
-  const handleDateChange = (event) => {
-    setDueDate(event.target.value);
-  };
-
-  const handleAddButtonClicked = () => {
+  
+  const handleAddButtonClicked = (event) => {
+    
+    event.preventDefault();
+    
+    const todoName = todoNameElement.current.value;
+    const dueDate = dueDateElement.current.value;
+    todoNameElement.current.value = "";
+    dueDateElement.current.value = "";
     onNewItem(todoName, dueDate);
-    setDueDate("");
-    setTodoName("");
-
+    
+    
   };
 
   
   return (
     <div class="container text-center">
-      <div class="row kg-row">
+      <form  class="row kg-row"
+       onSubmit={handleAddButtonClicked}>
+       
         <div class="col-5">
           <input
             type="text"
+            ref={todoNameElement}
             placeholder="Enter Todo Here"
-            onChange={handleNameChange}
+            value = {todoName}
+            
           />
         </div>
         <div class="col-4">
-          <input type="date" onChange={handleDateChange} />
+          <input type="date" 
+          ref={dueDateElement}
+         />
         </div>
         <div class="col-3">
           <button
-            type="button"
+           type="submit"
             class="btn btn-success kg-button"
-            onClick={handleAddButtonClicked}
           >
-            Add
+            <AiFillFileAdd />
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 }
