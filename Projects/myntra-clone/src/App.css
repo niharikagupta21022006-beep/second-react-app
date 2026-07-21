@@ -1,0 +1,34 @@
+header {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  
+}
+
+.nav-bar{
+  display: flex;
+  gap: 30px;
+  margin-left: 50px;
+}
+.myntra-home{
+  height: 36px;
+}
+
+.logo-container{
+   margin-left: 4%;
+
+}
+.nav-bar a {
+  text-decoration: none;
+  color: #282c3f;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  padding: 28px 0;
+  border-bottom: 4px solid transparent;
+}
+
+.nav-bar a:hover{
+  border-bottom: 4px solid #ff3f6c;
+}
