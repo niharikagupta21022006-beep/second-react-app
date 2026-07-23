@@ -13,6 +13,34 @@ function Header() {
         <a href="#">BEAUTY</a>
         <a href="#">STUDIO</a>
       </nav>
+      <div className="search-bar">
+        <span className="material-symbols-outlined">search</span>
+        <input className="search-input"
+        placeholder="Search for producys,brands and more"></input>
+      </div>
+
+      <div className="action-bar">
+        <div className="action-container">
+            <span className="material-symbols-outlined">
+                person
+            </span>
+            <span>Profile</span>
+        </div>
+
+        <div className="action-container">
+            <span className="material-symbols-outlined">
+                favorite
+            </span>
+            <span>Wishlist</span>
+        </div>
+
+        <div className="action-container">
+            <span className="material-symbols-outlined">
+                shopping_bag
+            </span>
+            <span>Bag</span>
+        </div>
+      </div>
     </header>
   );
 }
